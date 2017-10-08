@@ -1,0 +1,138 @@
+Oct 08, 2017 8:30:58 PM com.ggsg.linkauto.Main configureLogger
+CONFIG: LOGGER CONFIGURATION LOADED.
+Oct 08, 2017 8:30:58 PM com.ggsg.linkauto.Main main
+CONFIG: CONFIGURATION FILE LOADED.
+Oct 08, 2017 8:30:58 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Link Excel location : D://LinkAutomation//linkexcel.xls
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 1
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:1 , URL: http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:2 , Emails: [info@monsonkashmirtourism.com]
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:3 , Disrespect Text: a Tantrik called Gorakh Nath (Demo God), 
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:4 , Correction Text: MahaYogi Guru Gorakshnath
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: READING URL :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: URL not corrected : - http://www.monsonkashmirtourism.com/katra.aspx For disrespect text : a Tantrik called Gorakh Nath (Demo God), 
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 2
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:1 , URL: http://www.indiaunveiled.in/destination/shri-mata-vaishno-devi-shrine
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:2 , Emails: [info@sparxsys.com, ravisagar@gmail.com]
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:3 , Disrespect Text: a Tantrik named Gorakh Nath 
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Reading column no:4 , Correction Text: MahaYogi Guru Gorakshnath
+Oct 08, 2017 8:30:59 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: READING URL :- http://www.indiaunveiled.in/destination/shri-mata-vaishno-devi-shrine
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 3
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 4
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 5
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 6
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 7
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 8
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 9
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 10
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 11
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 12
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 13
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 14
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 15
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 16
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 17
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 18
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 19
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 20
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkExcelReader returnLinksData
+INFO: Row Number: 21
+Oct 08, 2017 8:31:01 PM com.ggsg.linkauto.LinkAutoProcessor processExcel
+INFO: READING URL :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.LinkAutoProcessor processExcel
+INFO: URL not corrected : - http://www.monsonkashmirtourism.com/katra.aspx For disrespect text : a Tantrik called Gorakh Nath (Demo God), 
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Aniruddha.anikhindi@gmail.com	 , Password:9370030429aaa 
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Aniruddha.anikhindi@gmail.com	 SESSION CONFIGURED
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: User Name : Aniruddha.anikhindi@gmail.com	
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: Name extracted: Aniruddha
+Oct 08, 2017 8:31:02 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL CONTENT :- Hello,<BR><BR>My name is Aniruddha and I am a part of Shiva Avtari Guru Gorakshnath Bhakti Movement.<BR><BR><B>Jai Guru Gorakshnath Ji.</B><BR><BR>This is regarding web page on your web site:<BR>http://www.monsonkashmirtourism.com/katra.aspx<BR><BR>This above web page contains disrespectful content about Guru GorakshnathJi.<BR><BR><B>Disrespect Text:</B>&nbsp;a Tantrik called Gorakh Nath (Demo God), <BR><B>Corrected Text:</B>&nbsp;MahaYogi Guru Gorakshnath<BR><BR><font color=red>Requesting you from all devotees to please correct above disrespect content about Guru GorakshNathJi from your web page.</font><BR><BR><BR>Please let us know if you need any support on this.<BR><BR><BR>Thank you.<BR><BR>Regards,<BR>Guru Gorakshnath Spiritual Group<BR>
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL SENT SUCCESSFULLY  :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Triveni.desai11@gmail.com	 , Password:Solapuraai
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Triveni.desai11@gmail.com	 SESSION CONFIGURED
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: User Name : Triveni.desai11@gmail.com	
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: Name extracted: Triveni
+Oct 08, 2017 8:31:07 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL CONTENT :- Hello,<BR><BR>My name is Triveni and I am a part of Shiva Avtari Guru Gorakshnath Bhakti Movement.<BR><BR><B>Jai Guru Gorakshnath Ji.</B><BR><BR>This is regarding web page on your web site:<BR>http://www.monsonkashmirtourism.com/katra.aspx<BR><BR>This above web page contains disrespectful content about Guru GorakshnathJi.<BR><BR><B>Disrespect Text:</B>&nbsp;a Tantrik called Gorakh Nath (Demo God), <BR><B>Corrected Text:</B>&nbsp;MahaYogi Guru Gorakshnath<BR><BR><font color=red>Requesting you from all devotees to please correct above disrespect content about Guru GorakshNathJi from your web page.</font><BR><BR><BR>Please let us know if you need any support on this.<BR><BR><BR>Thank you.<BR><BR>Regards,<BR>Guru Gorakshnath Spiritual Group<BR>
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL SENT SUCCESSFULLY  :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Sangram.gupta12@gmail.com	 , Password:Solapuraai1
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Sangram.gupta12@gmail.com	 SESSION CONFIGURED
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: User Name : Sangram.gupta12@gmail.com	
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: Name extracted: Sangram
+Oct 08, 2017 8:31:13 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL CONTENT :- Hello,<BR><BR>My name is Sangram and I am a part of Shiva Avtari Guru Gorakshnath Bhakti Movement.<BR><BR><B>Jai Guru Gorakshnath Ji.</B><BR><BR>This is regarding web page on your web site:<BR>http://www.monsonkashmirtourism.com/katra.aspx<BR><BR>This above web page contains disrespectful content about Guru GorakshnathJi.<BR><BR><B>Disrespect Text:</B>&nbsp;a Tantrik called Gorakh Nath (Demo God), <BR><B>Corrected Text:</B>&nbsp;MahaYogi Guru Gorakshnath<BR><BR><font color=red>Requesting you from all devotees to please correct above disrespect content about Guru GorakshNathJi from your web page.</font><BR><BR><BR>Please let us know if you need any support on this.<BR><BR><BR>Thank you.<BR><BR>Regards,<BR>Guru Gorakshnath Spiritual Group<BR>
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL SENT SUCCESSFULLY  :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Shivani.chauhan.lawyer@gmail.com	 , Password:Solapuraai2
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Shivani.chauhan.lawyer@gmail.com	 SESSION CONFIGURED
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: User Name : Shivani.chauhan.lawyer@gmail.com	
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: Name extracted: Shivani
+Oct 08, 2017 8:31:17 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL CONTENT :- Hello,<BR><BR>My name is Shivani and I am a part of Shiva Avtari Guru Gorakshnath Bhakti Movement.<BR><BR><B>Jai Guru Gorakshnath Ji.</B><BR><BR>This is regarding web page on your web site:<BR>http://www.monsonkashmirtourism.com/katra.aspx<BR><BR>This above web page contains disrespectful content about Guru GorakshnathJi.<BR><BR><B>Disrespect Text:</B>&nbsp;a Tantrik called Gorakh Nath (Demo God), <BR><B>Corrected Text:</B>&nbsp;MahaYogi Guru Gorakshnath<BR><BR><font color=red>Requesting you from all devotees to please correct above disrespect content about Guru GorakshNathJi from your web page.</font><BR><BR><BR>Please let us know if you need any support on this.<BR><BR><BR>Thank you.<BR><BR>Regards,<BR>Guru Gorakshnath Spiritual Group<BR>
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL SENT SUCCESSFULLY  :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Mahavirsingh.amritsar@gmail.com	 , Password:Solapuraai3
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:Mahavirsingh.amritsar@gmail.com	 SESSION CONFIGURED
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: User Name : Mahavirsingh.amritsar@gmail.com	
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: Name extracted: Mahavirsingh
+Oct 08, 2017 8:31:21 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL CONTENT :- Hello,<BR><BR>My name is Mahavirsingh and I am a part of Shiva Avtari Guru Gorakshnath Bhakti Movement.<BR><BR><B>Jai Guru Gorakshnath Ji.</B><BR><BR>This is regarding web page on your web site:<BR>http://www.monsonkashmirtourism.com/katra.aspx<BR><BR>This above web page contains disrespectful content about Guru GorakshnathJi.<BR><BR><B>Disrespect Text:</B>&nbsp;a Tantrik called Gorakh Nath (Demo God), <BR><B>Corrected Text:</B>&nbsp;MahaYogi Guru Gorakshnath<BR><BR><font color=red>Requesting you from all devotees to please correct above disrespect content about Guru GorakshNathJi from your web page.</font><BR><BR><BR>Please let us know if you need any support on this.<BR><BR><BR>Thank you.<BR><BR>Regards,<BR>Guru Gorakshnath Spiritual Group<BR>
+Oct 08, 2017 8:31:26 PM com.ggsg.linkauto.MailSender sendMailIndividually
+INFO: MAIL SENT SUCCESSFULLY  :- http://www.monsonkashmirtourism.com/katra.aspx
+Oct 08, 2017 8:31:26 PM com.ggsg.linkauto.MailSender sendMail
+INFO:  Gmail id:null , Password:null
+Oct 08, 2017 8:31:30 PM com.ggsg.linkauto.MailSender sendReportMail
+INFO: LALA REPORT MAIL :[http://www.monsonkashmirtourism.com/katra.aspx]
