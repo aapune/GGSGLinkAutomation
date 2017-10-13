@@ -1,7 +1,10 @@
 package com.ggsg.linkauto;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.UnknownHostException;
 
 public final class UrlReader
 {

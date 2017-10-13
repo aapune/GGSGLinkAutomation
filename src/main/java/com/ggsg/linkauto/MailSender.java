@@ -1,18 +1,14 @@
 package com.ggsg.linkauto;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
-import org.apache.log4j.Logger;
 
 public class MailSender {
 	
@@ -23,7 +19,7 @@ public class MailSender {
 	
 		public boolean sendMail(LinkVO linkVO) {
 			
-			for(int i = 1; i<25 ; i++) {
+			for(int i = 1; i<100 ; i++) {
 				String mailId = "LINK_MAIL_ID"+i;
 				String password = "LINK_MAIL_PASSWORD"+i;
 				Main.LOGGER.info(" Gmail id:"+Main.configProps.getProperty(mailId)+" , Password:"+Main.configProps.getProperty(password));
@@ -144,7 +140,7 @@ public class MailSender {
 					}
 					text.append(NEWLINE);
 					text.append(NEWLINE);
-					text.append("Regards, : "+ NEWLINE);
+					text.append("Regards,"+ NEWLINE);
 					text.append("Your LALA ");
 				}
 					

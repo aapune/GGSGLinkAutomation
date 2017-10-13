@@ -26,8 +26,8 @@ public class Main {
 				InputStream is = new FileInputStream(new File(args[0]));
 				configProps.load(is);
 				LOGGER.config("CONFIGURATION FILE LOADED.");
-				LinkAutoProcessor processor = new LinkAutoProcessor();
-				processor.processExcel();
+				//LinkAutoProcessor processor = new LinkAutoProcessor();
+				//rocessor.processExcel();
 				
 			} catch (IOException e) {
 				e.printStackTrace();

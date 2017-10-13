@@ -80,16 +80,11 @@ public class LinkExcelReader {
 						}
 
 					}
-					if(linkVO.getUrl() != null && !"".equals(linkVO.getUrl().trim())) {
-						UrlReader urlReader = new UrlReader(linkVO.getUrl());
-						Main.LOGGER.info("READING URL :- "+linkVO.getUrl());
-						String content = urlReader.read();
-						if (content != null && !"".equals(content.trim())) {							
-							if(content.contains(linkVO.getDisrepectText().trim())) {
+					if(linkVO.getUrl() != null && !"".equals(linkVO.getUrl().trim())) {						
+						if ( UrlAnalyzer.disrespectTextPresentInUrl(linkVO.getUrl().trim(), linkVO.getDisrepectText().trim())) {							
 								Main.LOGGER.info("URL not corrected : - "+linkVO.getUrl() +" For disrespect text : "+linkVO.getDisrepectText());
 								setLinkData.add(linkVO);
-								System.out.println(" URL added in action list: "+linkVO.getUrl());
-							}
+								Main.LOGGER.info(" URL added in action list: "+linkVO.getUrl());
 						}
 						
 					}
