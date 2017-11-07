@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.linkauto</groupId>
   <artifactId>linkauto</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   
   
   <build>
@@ -74,12 +74,6 @@
     	<version>1.4</version>
 	</dependency>
 	
-	 <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.2.1</version>
-      <scope>compile</scope>
-    </dependency>
    
 	<dependency>
     	<groupId>org.jsoup</groupId>

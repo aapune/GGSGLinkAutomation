@@ -1,7 +1,7 @@
 package com.ggsg.linkauto;
 
-import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
@@ -23,12 +23,13 @@ public class MailSender {
 				String mailId = "LINK_MAIL_ID"+i;
 				String password = "LINK_MAIL_PASSWORD"+i;
 				Main.LOGGER.info(" Gmail id:"+Main.configProps.getProperty(mailId)+" , Password:"+Main.configProps.getProperty(password));
-				if(Main.configProps.getProperty(mailId) != null && Main.configProps.getProperty(password) != null) {
+				if(Main.configProps.getProperty(mailId) != null && Main.configProps.getProperty(password) != null) 
+				{
 					Session session = prepareConfiguration(Main.configProps.getProperty(mailId), Main.configProps.getProperty(password));
 					Main.LOGGER.info(" Gmail id:"+Main.configProps.getProperty(mailId)+" SESSION CONFIGURED");
 					boolean retVal = sendMailIndividually(Main.configProps.getProperty(mailId), session, linkVO);	
-					if(!retVal) {
-						return false;
+					if(retVal) {
+						Main.mailSentList.add(linkVO.getUrl());
 					}
 				}else {
 					break;
@@ -45,19 +46,27 @@ public class MailSender {
 				String name = username.substring(0, index);
 				Main.LOGGER.info("Name extracted: "+name);
 				Message message = new MimeMessage(session);
-				message.setContent(message, "text/html");
 				message.setFrom(new InternetAddress(username));
 				
-				InternetAddress [] addresses = new InternetAddress[linkVO.getEmailIds().length];
-				int i = 0;
- 				for(String toMail :linkVO.getEmailIds()) {
-					if(toMail != null) {
-						addresses[i] = new InternetAddress(toMail.trim());
-						i++;
+				InternetAddress [] addresses = null;
+				if(linkVO.getEmailIds() == null) {
+					Main.LOGGER.info(" Email id is null so not sending mail for link : "+linkVO.getUrl());
+					return false;
+				}else {
+					addresses = new InternetAddress[linkVO.getEmailIds().length];
+					int i = 0;
+	 				for(String toMail :linkVO.getEmailIds()) {
+						if(toMail != null && !"".equals(toMail.trim())) {
+							addresses[i] = new InternetAddress(toMail.trim());
+							i++;
+						}else {
+							Main.LOGGER.info(" Email id is null so not sending mail for link  : "+linkVO.getUrl());
+							return false;
+						}
 					}
 				}
+				
 				message.setRecipients(Message.RecipientType.TO, addresses);
-				//message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("aa.pune@gmail.com"));
 				message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(Main.configProps.getProperty("CC_TO_EMAIL1")));
 				message.setSubject(Main.configProps.getProperty(MAIL_SUB_TEXT));
 				StringBuffer text = new StringBuffer();
@@ -91,12 +100,13 @@ public class MailSender {
 
 			} catch (Exception e) {
 				e.printStackTrace();
+				Main.LOGGER.log(Level.SEVERE, e.getMessage(), e);
 				return false;
 			}
 		}
 
 
-		private Session prepareConfiguration(final String username, final String password) {
+		private static Session prepareConfiguration(final String username, final String password) {
 			Properties props = new Properties();
 			props.put("mail.smtp.auth", "true");
 			props.put("mail.smtp.starttls.enable", "true");
@@ -113,50 +123,7 @@ public class MailSender {
 		}
 		
 		
-		public boolean sendReportMail(List <String> listUrl) {
-			String lalamailId = "LALA_MAIL_ID";
-			String lalapassword = "LALA_MAIL_PASSWORD";
-			Session session = prepareConfiguration(Main.configProps.getProperty(lalamailId), Main.configProps.getProperty(lalapassword));
-			try {
 
-				Message message = new MimeMessage(session);
-				message.setContent(message, "text/html");
-				message.setFrom(new InternetAddress(lalamailId));
-				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("aa.pune@gmail.com"));
-				message.setSubject(Main.configProps.getProperty(MAIL_SUB_TEXT));
-				StringBuffer text = new StringBuffer();
-				
-				if(listUrl != null && listUrl.size() > 0) {
-					text.append("Report Mail : "+ NEWLINE);
-					text.append(NEWLINE);
-					text.append("For below listed url's mail sent to concerned mail id's : "+ NEWLINE);
-					text.append(NEWLINE);
-					int i = 0;
-					for(String url :  listUrl) {
-						i++;
-						text.append(i+")"+ url + NEWLINE);
-						text.append(NEWLINE);
-						
-					}
-					text.append(NEWLINE);
-					text.append(NEWLINE);
-					text.append("Regards,"+ NEWLINE);
-					text.append("Your LALA ");
-				}
-					
-				message.setContent(text.toString(), "text/html");			
-				Transport.send(message);
-				Main.LOGGER.info("LALA REPORT MAIL :"+listUrl);
-				return true;
-
-			} catch (Exception e) {
-				e.printStackTrace();
-				return false;
-			}
-		
-
-		}
-	
 	
 	
 }

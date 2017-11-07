@@ -1,11 +1,18 @@
 package com.ggsg.linkauto;
 
-public class LinkVO {
+import java.io.Serializable;
+
+public class LinkVO implements Serializable {
 	
+	/**
+	 * serial verion uid
+	 */
+	private static final long serialVersionUID = 3576583324230427433L;
 	private String url;
 	private String [] emailIds;
 	private String disrepectText;
 	private String correctedText;
+	private String linkStatus;
 	public String getUrl() {
 		return url;
 	}
@@ -30,10 +37,11 @@ public class LinkVO {
 	public void setCorrectedText(String correctedText) {
 		this.correctedText = correctedText;
 	}
-	
-	
-	
-	
-	
+	public String getLinkStatus() {
+		return linkStatus;
+	}
+	public void setLinkStatus(String linkStatus) {
+		this.linkStatus = linkStatus;
+	}
 	
 }

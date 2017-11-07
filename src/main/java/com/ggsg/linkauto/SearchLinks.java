@@ -29,16 +29,21 @@ import org.jsoup.select.Elements;
 public class SearchLinks {
 
 		public static Set <LinkVO> getGoogleSearchedData(String disrepectText, String correctedText){	
-		
+			
 			Set<LinkVO> searchSet = new HashSet<LinkVO>();
 			String google = "http://www.google.com/search?q=";
-			String search = "\"Tantrik named Gorakh Nath\"";
+			String search = disrepectText;
 			String numIndex = "";
 			String userAgent = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
-			String[] suffixArray = {"htm" ,"html","aspx","asp","jsp","jspx"};
+			String[] suffixArray = {"htm" ,"html","aspx","asp","jsp","jspx","php"};
 			List <String> suffixList = Arrays.asList(suffixArray);
 			int num = 0;
-			int googleSearchPages = 3;
+			
+			int googleSearchPages = 2;
+			if(Main.configProps.getProperty("GOOGLE_SEARCH_PAGES") != null) {
+				googleSearchPages = Integer.parseInt(Main.configProps.getProperty("GOOGLE_SEARCH_PAGES"));
+			}
+			
 			for (int i = 0; i < googleSearchPages; i++) 
 			{
 				if (i != 0) {
@@ -53,35 +58,55 @@ public class SearchLinks {
 				}
 				for (Element link : links) 
 				{
+					num++;
 					LinkVO linkObject = new LinkVO();
+					
+					if(Main.configProps.getProperty("SEARCH_TEXT1") != null &&
+							Main.configProps.getProperty("SEARCH_TEXT1").equalsIgnoreCase(disrepectText) ) {
+						String subStr = disrepectText.substring(1,disrepectText.length() - 1);
+						linkObject.setDisrepectText(subStr);
+						Main.LOGGER.info("Disrespect text  ====>" +linkObject.getDisrepectText());
+					}else {
+						linkObject.setDisrepectText(disrepectText);
+					}
+	
+					linkObject.setCorrectedText(correctedText);
 					String url = link.absUrl("href"); 
 					try {
 						url = URLDecoder.decode(url.substring(url.indexOf('=') + 1, url.indexOf('&')), "UTF-8");
 					} catch (Exception e) {
 						e.printStackTrace();
 						Main.LOGGER.log(Level.SEVERE, e.getMessage(), e);
+						if(Main.errorList != null) {
+							Main.errorList.add(url);
+						}
 						continue;
 					}
 					if (!url.startsWith("http")) {
 						continue; 
 					}
 					String suffix = url.substring(url.lastIndexOf(".")+1 , url.length());
-					Main.LOGGER.info("Suffix ------- :"+suffix);
-					num++;
-					
-					linkObject.setUrl(url.trim());
+									
 					Main.LOGGER.info("URL: " + url);
-					System.out.println("Num : " + num);
+					Main.LOGGER.info("Num : " + num);
+					Main.LOGGER.info("URL Suffix => "+suffix);
 					
+					
+					linkObject.setUrl(url.trim());				
 					Elements linksUrls = null;
 					try {
 						linksUrls = Jsoup.connect(url).get().select("a[href]");
 					} catch (Exception e) {
 						e.printStackTrace();
-						Main.LOGGER.log(Level.SEVERE, e.getMessage(), e);
+						Main.LOGGER.log(Level.SEVERE, e.getMessage(), e);	
+						if(Main.errorList != null) {
+							Main.errorList.add(url);
+						}
 						continue;
 					}
+					
 					for (Element linkObj : linksUrls) {
+						
 						String insideUrl = linkObj.absUrl("href");
 						
 						if( (insideUrl.contains("contact") || insideUrl.contains("contactus")
@@ -90,23 +115,26 @@ public class SearchLinks {
 							Set <String> emails = getEmailsByUrl(insideUrl);
 							Main.LOGGER.info(" Email : "+ emails);
 							if(emails != null) {
-								linkObject.setEmailIds((String [])emails.toArray());
+								String [] mailArray = (String [])emails.toArray(new String[emails.size()]);
+								linkObject.setEmailIds(mailArray);
 							}						
 
 						}
 		
 					}
-				
-					linkObject.setDisrepectText(disrepectText);
-					linkObject.setCorrectedText(correctedText);
+						
 					
-					
-					if(linkObject.getUrl() != null && linkObject.getEmailIds() != null) {
+					if(linkObject.getUrl() != null && linkObject.getEmailIds() != null && Arrays.asList(linkObject.getEmailIds()).size() > 0) {
 						searchSet.add(linkObject);
+					}else {
+						Main.LOGGER.info("No action for link : "+linkObject.getUrl());
+						Main.emailNotFoundList.add(linkObject.getUrl());
 					}
 				}
 
 			}
+			Main.LOGGER.info("GOOGLE SEARCH Found Total Links : "+(num-1) + ", "+"GOOGLE SEARCH PAGES:"+googleSearchPages);
+			Main.NUM_OF_LINKS_FOUND = num -1;
 			return searchSet;
 	}
 	

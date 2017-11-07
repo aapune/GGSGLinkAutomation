@@ -28,23 +28,23 @@ public class UrlAnalyzer {
             doc = new Cleaner(Whitelist.simpleText()).clean(doc);
             doc.outputSettings().escapeMode(EscapeMode.xhtml);            
             String cleanStr = doc.body().html();          
-            Main.LOGGER.info("Cleaned content : "+cleanStr);   
+            //Main.LOGGER.info("Jsoup Cleaned content : "+cleanStr);   
             if(cleanStr.contains(disText.trim())){
             	 return true;
+            }else {
+            	if(Main.urlCorrectedList != null) {
+            		Main.urlCorrectedList.add(urlStr);
+            	}
             }
         }
         catch (Exception e)
         {
            Main.LOGGER.log(Level.SEVERE, e.getMessage(), e);
+           if(Main.errorList != null) {
+        	   Main.errorList.add(urlStr);
+           }
         }
        return false;     
 	}
 	
-	
-	
-	
-	
-	
-
-
 }
